@@ -51,14 +51,13 @@ float ss(vec3 p)
 
 void vertex()
 {
+	//VERTEX.xyz *= sin(ss(VERTEX.xyz) * (TIME / 5.0));
+	//VERTEX.xyz *= ss(VERTEX.xyz);
 	VERTEX.xyz *= ss(VERTEX.xyz);
-	//VERTEX.x = ss(VERTEX);
-	//VERTEX.y = ss(VERTEX);
-	//VERTEX.z = ss(VERTEX);
-	//VERTEX.y += cos(VERTEX.x) * sin(VERTEX.z * 0.5 * TIME);
 }
 
 void fragment()
 {
+	//ALBEDO = NORMAL.xyz * 0.5 + 0.5;
 	ALBEDO = NORMAL.xyz * 0.5 + 0.5;
 }
