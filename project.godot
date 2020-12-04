@@ -18,7 +18,10 @@ _global_script_class_icons={
 config/name="Super Shapes 2"
 config/description="Play with 3d supershapes! "
 run/main_scene="res://Root.tscn"
-config/icon="res://icon.png"
+boot_splash/image="res://coveridea2.png"
+boot_splash/bg_color=Color( 0, 0, 0, 1 )
+config/icon="res://superIcon.png"
+config/windows_native_icon="res://bigicon_J6A_icon.ico"
 
 [editor_plugins]
 
