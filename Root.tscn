@@ -1,0 +1,273 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://PlayShadMat.material" type="Material" id=1]
+[ext_resource path="res://SuperScript.gd" type="Script" id=2]
+[ext_resource path="res://SpinShape.gd" type="Script" id=3]
+
+[sub_resource type="SphereMesh" id=1]
+radius = 0.5
+height = 1.0
+radial_segments = 256
+rings = 128
+
+[sub_resource type="SphereShape" id=3]
+
+[sub_resource type="Environment" id=2]
+background_mode = 1
+glow_enabled = true
+glow_intensity = 2.82
+glow_strength = 0.4
+glow_bloom = 0.57
+glow_blend_mode = 0
+glow_hdr_threshold = 0.96
+
+[node name="Root" type="Spatial"]
+
+[node name="Shape" type="Spatial" parent="."]
+
+[node name="KinematicBody" type="KinematicBody" parent="Shape"]
+script = ExtResource( 3 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Shape/KinematicBody"]
+mesh = SubResource( 1 )
+material/0 = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Shape/KinematicBody"]
+shape = SubResource( 3 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.95489 )
+environment = SubResource( 2 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="WindowDialog" type="WindowDialog" parent="CanvasLayer"]
+visible = true
+margin_left = 9.0
+margin_top = 71.0
+margin_right = 276.0
+margin_bottom = 529.0
+window_title = "Controls"
+resizable = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/WindowDialog"]
+margin_right = 260.0
+margin_bottom = 404.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="M1Label" type="Label" parent="CanvasLayer/WindowDialog/VBoxContainer"]
+margin_right = 260.0
+margin_bottom = 14.0
+text = "M1: "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="M1Slider" type="HSlider" parent="CanvasLayer/WindowDialog/VBoxContainer"]
+margin_top = 18.0
+margin_right = 260.0
+margin_bottom = 34.0
+step = 0.1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="N1Label" type="Label" parent="CanvasLayer/WindowDialog/VBoxContainer"]
+margin_top = 38.0
+margin_right = 260.0
+margin_bottom = 52.0
+text = "N 1 1:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="N11Slider" type="HSlider" parent="CanvasLayer/WindowDialog/VBoxContainer"]
+margin_top = 56.0
+margin_right = 260.0
+margin_bottom = 72.0
+step = 0.1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="N1Label2" type="Label" parent="CanvasLayer/WindowDialog/VBoxContainer"]
+margin_top = 76.0
+margin_right = 260.0
+margin_bottom = 90.0
+text = "N 1 2:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="N12Slider" type="HSlider" parent="CanvasLayer/WindowDialog/VBoxContainer"]
+margin_top = 94.0
+margin_right = 260.0
+margin_bottom = 110.0
+step = 0.1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="N1Label3" type="Label" parent="CanvasLayer/WindowDialog/VBoxContainer"]
+margin_top = 114.0
+margin_right = 260.0
+margin_bottom = 128.0
+text = "N1 3:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="N13Slider" type="HSlider" parent="CanvasLayer/WindowDialog/VBoxContainer"]
+margin_top = 132.0
+margin_right = 260.0
+margin_bottom = 148.0
+step = 0.1
+
+[node name="A1Label" type="Label" parent="CanvasLayer/WindowDialog/VBoxContainer"]
+margin_top = 152.0
+margin_right = 260.0
+margin_bottom = 166.0
+text = "A1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="A1Slider" type="HSlider" parent="CanvasLayer/WindowDialog/VBoxContainer"]
+margin_top = 170.0
+margin_right = 260.0
+margin_bottom = 186.0
+step = 0.1
+
+[node name="B1Label" type="Label" parent="CanvasLayer/WindowDialog/VBoxContainer"]
+margin_top = 190.0
+margin_right = 260.0
+margin_bottom = 204.0
+text = "B1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="B1Slider" type="HSlider" parent="CanvasLayer/WindowDialog/VBoxContainer"]
+margin_top = 208.0
+margin_right = 260.0
+margin_bottom = 224.0
+step = 0.1
+
+[node name="M2Label" type="Label" parent="CanvasLayer/WindowDialog/VBoxContainer"]
+margin_top = 228.0
+margin_right = 260.0
+margin_bottom = 242.0
+text = "M2"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="M2Slider" type="HSlider" parent="CanvasLayer/WindowDialog/VBoxContainer"]
+margin_top = 246.0
+margin_right = 260.0
+margin_bottom = 262.0
+step = 0.1
+
+[node name="N21Label" type="Label" parent="CanvasLayer/WindowDialog/VBoxContainer"]
+margin_top = 266.0
+margin_right = 260.0
+margin_bottom = 280.0
+text = "N 2 1:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="N21Slider" type="HSlider" parent="CanvasLayer/WindowDialog/VBoxContainer"]
+margin_top = 284.0
+margin_right = 260.0
+margin_bottom = 300.0
+step = 0.1
+
+[node name="N22Label" type="Label" parent="CanvasLayer/WindowDialog/VBoxContainer"]
+margin_top = 304.0
+margin_right = 260.0
+margin_bottom = 318.0
+text = "N 2 2:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="N22Slider" type="HSlider" parent="CanvasLayer/WindowDialog/VBoxContainer"]
+margin_top = 322.0
+margin_right = 260.0
+margin_bottom = 338.0
+step = 0.1
+
+[node name="N23Label" type="Label" parent="CanvasLayer/WindowDialog/VBoxContainer"]
+margin_top = 342.0
+margin_right = 260.0
+margin_bottom = 356.0
+text = "N 2 3:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="N23Slider" type="HSlider" parent="CanvasLayer/WindowDialog/VBoxContainer"]
+margin_top = 360.0
+margin_right = 260.0
+margin_bottom = 376.0
+step = 0.1
+
+[node name="A2Label" type="Label" parent="CanvasLayer/WindowDialog/VBoxContainer"]
+margin_top = 380.0
+margin_right = 260.0
+margin_bottom = 394.0
+text = "A2"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="A2Slider" type="HSlider" parent="CanvasLayer/WindowDialog/VBoxContainer"]
+margin_top = 398.0
+margin_right = 260.0
+margin_bottom = 414.0
+step = 0.1
+
+[node name="B2Label" type="Label" parent="CanvasLayer/WindowDialog/VBoxContainer"]
+margin_top = 418.0
+margin_right = 260.0
+margin_bottom = 432.0
+text = "B2"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="B2Slider" type="HSlider" parent="CanvasLayer/WindowDialog/VBoxContainer"]
+margin_top = 436.0
+margin_right = 260.0
+margin_bottom = 452.0
+step = 0.1
+
+[node name="ButtonToggleControls" type="Button" parent="CanvasLayer"]
+margin_left = 11.0
+margin_top = 15.0
+margin_right = 85.0
+margin_bottom = 35.0
+text = "Controls"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="value_changed" from="CanvasLayer/WindowDialog/VBoxContainer/M1Slider" to="Shape/KinematicBody/MeshInstance" method="_on_M1Slider_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/WindowDialog/VBoxContainer/N11Slider" to="Shape/KinematicBody/MeshInstance" method="_on_N11Slider_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/WindowDialog/VBoxContainer/N12Slider" to="Shape/KinematicBody/MeshInstance" method="_on_N12Slider_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/WindowDialog/VBoxContainer/N13Slider" to="Shape/KinematicBody/MeshInstance" method="_on_N13Slider_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/WindowDialog/VBoxContainer/A1Slider" to="Shape/KinematicBody/MeshInstance" method="_on_A1Slider_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/WindowDialog/VBoxContainer/B1Slider" to="Shape/KinematicBody/MeshInstance" method="_on_B1Slider_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/WindowDialog/VBoxContainer/M2Slider" to="Shape/KinematicBody/MeshInstance" method="_on_M2Slider_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/WindowDialog/VBoxContainer/N21Slider" to="Shape/KinematicBody/MeshInstance" method="_on_N21Slider_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/WindowDialog/VBoxContainer/N22Slider" to="Shape/KinematicBody/MeshInstance" method="_on_N22Slider_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/WindowDialog/VBoxContainer/N23Slider" to="Shape/KinematicBody/MeshInstance" method="_on_N23Slider_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/WindowDialog/VBoxContainer/A2Slider" to="Shape/KinematicBody/MeshInstance" method="_on_A2Slider_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/WindowDialog/VBoxContainer/B2Slider" to="Shape/KinematicBody/MeshInstance" method="_on_B2Slider_value_changed"]
+[connection signal="pressed" from="CanvasLayer/ButtonToggleControls" to="Shape/KinematicBody/MeshInstance" method="_on_ButtonToggleControls_pressed"]
