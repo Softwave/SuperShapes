@@ -6,6 +6,7 @@ extends MeshInstance
 # var b = "text"
 var m1_var = 0.0
 var glow_bool = false
+var inc_one_bool = false 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -164,3 +165,35 @@ func _on_btnToggleBloom_toggled(button_pressed):
 	else:
 		get_node("../../../TrackballCamera").environment.glow_bloom = 0.0
 	
+
+
+func _on_btnToggleIncrement_toggled(button_pressed):
+	inc_one_bool = !inc_one_bool
+	if (inc_one_bool == true):
+		get_node("../../../CanvasLayer/WindowDialog/VBoxContainer/M1Slider").step = 1.0
+		get_node("../../../CanvasLayer/WindowDialog/VBoxContainer/N11Slider").step = 1.0
+		get_node("../../../CanvasLayer/WindowDialog/VBoxContainer/N12Slider").step = 1.0
+		get_node("../../../CanvasLayer/WindowDialog/VBoxContainer/N13Slider").step = 1.0
+		get_node("../../../CanvasLayer/WindowDialog/VBoxContainer/A1Slider").step = 1.0
+		get_node("../../../CanvasLayer/WindowDialog/VBoxContainer/B1Slider").step = 1.0
+		
+		get_node("../../../CanvasLayer/WindowDialog/VBoxContainer/M2Slider").step = 1.0
+		get_node("../../../CanvasLayer/WindowDialog/VBoxContainer/N21Slider").step = 1.0
+		get_node("../../../CanvasLayer/WindowDialog/VBoxContainer/N22Slider").step = 1.0
+		get_node("../../../CanvasLayer/WindowDialog/VBoxContainer/N23Slider").step = 1.0
+		get_node("../../../CanvasLayer/WindowDialog/VBoxContainer/A2Slider").step = 1.0
+		get_node("../../../CanvasLayer/WindowDialog/VBoxContainer/B2Slider").step = 1.0
+	else:
+		get_node("../../../CanvasLayer/WindowDialog/VBoxContainer/M1Slider").step = 0.1
+		get_node("../../../CanvasLayer/WindowDialog/VBoxContainer/N11Slider").step = 0.1
+		get_node("../../../CanvasLayer/WindowDialog/VBoxContainer/N12Slider").step = 0.1
+		get_node("../../../CanvasLayer/WindowDialog/VBoxContainer/N13Slider").step = 0.1
+		get_node("../../../CanvasLayer/WindowDialog/VBoxContainer/A1Slider").step = 0.1
+		get_node("../../../CanvasLayer/WindowDialog/VBoxContainer/B1Slider").step = 0.1
+		
+		get_node("../../../CanvasLayer/WindowDialog/VBoxContainer/M2Slider").step = 0.1
+		get_node("../../../CanvasLayer/WindowDialog/VBoxContainer/N21Slider").step = 0.1
+		get_node("../../../CanvasLayer/WindowDialog/VBoxContainer/N22Slider").step = 0.1
+		get_node("../../../CanvasLayer/WindowDialog/VBoxContainer/N23Slider").step = 0.1
+		get_node("../../../CanvasLayer/WindowDialog/VBoxContainer/A2Slider").step = 0.1
+		get_node("../../../CanvasLayer/WindowDialog/VBoxContainer/B2Slider").step = 0.1
