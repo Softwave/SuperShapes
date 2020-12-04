@@ -5,6 +5,7 @@ extends MeshInstance
 # var a = 2
 # var b = "text"
 var m1_var = 0.0
+var glow_bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -85,3 +86,45 @@ func _on_A2Slider_value_changed(value):
 func _on_B2Slider_value_changed(value):
 	var superMesh = get_node("../MeshInstance")
 	superMesh.get_surface_material(0).set_shader_param("_B2", value)
+
+
+func _on_BtnReset_pressed():
+	get_node("../../../CanvasLayer/WindowDialog/VBoxContainer/M1Slider").value = 8.0
+	get_node("../../../CanvasLayer/WindowDialog/VBoxContainer/N11Slider").value = 60.0
+	get_node("../../../CanvasLayer/WindowDialog/VBoxContainer/N12Slider").value = 100.0
+	get_node("../../../CanvasLayer/WindowDialog/VBoxContainer/N13Slider").value = 30.0
+	
+	get_node("../../../CanvasLayer/WindowDialog/VBoxContainer/A1Slider").value = 1.0
+	get_node("../../../CanvasLayer/WindowDialog/VBoxContainer/B1Slider").value = 1.0
+	
+	get_node("../../../CanvasLayer/WindowDialog/VBoxContainer/M2Slider").value = 2.0
+	get_node("../../../CanvasLayer/WindowDialog/VBoxContainer/N21Slider").value = 10.0
+	get_node("../../../CanvasLayer/WindowDialog/VBoxContainer/N22Slider").value = 10.0
+	get_node("../../../CanvasLayer/WindowDialog/VBoxContainer/N23Slider").value = 10.0
+	
+	get_node("../../../CanvasLayer/WindowDialog/VBoxContainer/A2Slider").value = 1.0
+	get_node("../../../CanvasLayer/WindowDialog/VBoxContainer/B2Slider").value = 1.0
+
+
+#uniform float _M1 = 8.0;
+#uniform float _N11 = 60.0;
+#uniform float _N12 = 100.0;
+#uniform float _N13 = 30.0;
+#uniform float _A1 = 1.0;
+#uniform float _B1 = 1.0;
+#
+#uniform float _M2 = 2.0;
+#uniform float _N21 = 10.0;
+#uniform float _N22 = 10.0;
+#uniform float _N23 = 10.0;
+#uniform float _A2 = 1.0;
+#uniform float _B2 = 1.0;
+
+
+func _on_btnToggleBloom_toggled(button_pressed):
+	glow_bool = !glow_bool
+	if (glow_bool == true):
+		get_node("../../../TrackballCamera").environment.glow_bloom = 0.14
+	else:
+		get_node("../../../TrackballCamera").environment.glow_bloom = 0.0
+	
