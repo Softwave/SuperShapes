@@ -161,7 +161,7 @@ func _on_BtnReset_pressed():
 func _on_btnToggleBloom_toggled(button_pressed):
 	glow_bool = !glow_bool
 	if (glow_bool == true):
-		get_node("../../../TrackballCamera").environment.glow_bloom = 0.14
+		get_node("../../../TrackballCamera").environment.glow_bloom = 0.04
 	else:
 		get_node("../../../TrackballCamera").environment.glow_bloom = 0.0
 	

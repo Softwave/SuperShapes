@@ -1,22 +1,28 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://PlayShadMat.material" type="Material" id=1]
 [ext_resource path="res://SuperScript.gd" type="Script" id=2]
 [ext_resource path="res://SpinShape.gd" type="Script" id=3]
 [ext_resource path="res://addons/goutte.camera.trackball/trackball_camera.gd" type="Script" id=4]
-
-[sub_resource type="SphereMesh" id=1]
-radius = 0.5
-height = 1.0
-radial_segments = 512
-rings = 256
+[ext_resource path="res://ball.obj" type="ArrayMesh" id=5]
+[ext_resource path="res://btnScreen.gd" type="Script" id=6]
 
 [sub_resource type="SphereShape" id=2]
 
 [sub_resource type="Environment" id=3]
 background_mode = 1
+auto_exposure_scale = 0.15
+auto_exposure_max_luma = 3.0
+auto_exposure_speed = 2.33
+ssao_radius = 5.87
+ssao_intensity = 6.42
+ssao_quality = 2
 glow_enabled = true
+glow_bloom = 0.02
 glow_blend_mode = 0
+glow_hdr_luminance_cap = 13.0
+glow_bicubic_upscale = true
+glow_high_quality = true
 
 [node name="Root" type="Spatial"]
 
@@ -26,7 +32,7 @@ glow_blend_mode = 0
 script = ExtResource( 3 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Shape/KinematicBody"]
-mesh = SubResource( 1 )
+mesh = ExtResource( 5 )
 material/0 = ExtResource( 1 )
 script = ExtResource( 2 )
 
@@ -48,20 +54,14 @@ visible = true
 margin_left = 101.0
 margin_top = 45.0
 margin_right = 368.0
-margin_bottom = 609.0
+margin_bottom = 646.0
 window_title = "Controls"
 resizable = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/WindowDialog"]
 margin_left = 5.0
 margin_right = 263.0
-margin_bottom = 564.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
+margin_bottom = 602.0
 
 [node name="BtnReset" type="Button" parent="CanvasLayer/WindowDialog/VBoxContainer"]
 margin_right = 258.0
@@ -281,6 +281,13 @@ margin_right = 258.0
 margin_bottom = 564.0
 text = "Increment 1.0"
 
+[node name="btnScreen" type="Button" parent="CanvasLayer/WindowDialog/VBoxContainer"]
+margin_top = 568.0
+margin_right = 258.0
+margin_bottom = 588.0
+text = "Save Screenshot"
+script = ExtResource( 6 )
+
 [node name="ButtonToggleControls" type="Button" parent="CanvasLayer"]
 margin_left = 11.0
 margin_top = 15.0
@@ -290,6 +297,7 @@ text = "Controls"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
 [connection signal="pressed" from="CanvasLayer/WindowDialog/VBoxContainer/BtnReset" to="Shape/KinematicBody/MeshInstance" method="_on_BtnReset_pressed"]
 [connection signal="value_changed" from="CanvasLayer/WindowDialog/VBoxContainer/M1Slider" to="Shape/KinematicBody/MeshInstance" method="_on_M1Slider_value_changed"]
 [connection signal="value_changed" from="CanvasLayer/WindowDialog/VBoxContainer/N11Slider" to="Shape/KinematicBody/MeshInstance" method="_on_N11Slider_value_changed"]
@@ -305,4 +313,5 @@ __meta__ = {
 [connection signal="value_changed" from="CanvasLayer/WindowDialog/VBoxContainer/B2Slider" to="Shape/KinematicBody/MeshInstance" method="_on_B2Slider_value_changed"]
 [connection signal="toggled" from="CanvasLayer/WindowDialog/VBoxContainer/btnToggleBloom" to="Shape/KinematicBody/MeshInstance" method="_on_btnToggleBloom_toggled"]
 [connection signal="toggled" from="CanvasLayer/WindowDialog/VBoxContainer/btnToggleIncrement" to="Shape/KinematicBody/MeshInstance" method="_on_btnToggleIncrement_toggled"]
+[connection signal="pressed" from="CanvasLayer/WindowDialog/VBoxContainer/btnScreen" to="CanvasLayer/WindowDialog/VBoxContainer/btnScreen" method="_on_btnScreen_pressed"]
 [connection signal="pressed" from="CanvasLayer/ButtonToggleControls" to="Shape/KinematicBody/MeshInstance" method="_on_ButtonToggleControls_pressed"]

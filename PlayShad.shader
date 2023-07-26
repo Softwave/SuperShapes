@@ -51,13 +51,16 @@ float ss(vec3 p)
 
 void vertex()
 {
-	//VERTEX.xyz *= sin(ss(VERTEX.xyz) * (TIME / 5.0));
-	//VERTEX.xyz *= ss(VERTEX.xyz);
-	VERTEX.xyz *= ss(VERTEX.xyz);
+	vec4 world_vertex = (INV_CAMERA_MATRIX * vec4(VERTEX, 1.0));
+    vec3 normal = normalize(world_vertex.xyz - (INV_CAMERA_MATRIX * vec4(0.0, 0.0, 0.0, 1.0)).xyz);
+    VERTEX += normal * ss(VERTEX);
 }
 
 void fragment()
 {
 	//ALBEDO = NORMAL.xyz * 0.5 + 0.5;
 	ALBEDO = NORMAL.xyz * 0.5 + 0.5;
+
+    // Clamp ALBEDO to stay within [0, 1]
+    ALBEDO = clamp(ALBEDO, vec3(0.0), vec3(1.0));
 }

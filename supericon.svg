@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 72 72"
+   version="1.1"
+   id="svg1383"
+   sodipodi:docname="supericon.svg"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   inkscape:export-filename="superIcon.png"
+   inkscape:export-xdpi="85.333336"
+   inkscape:export-ydpi="85.333336"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1387">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient1635">
+      <stop
+         style="stop-color:#12c2e9;stop-opacity:1;"
+         offset="0"
+         id="stop1631" />
+      <stop
+         style="stop-color:#c471ed;stop-opacity:1;"
+         offset="0.5"
+         id="stop1006" />
+      <stop
+         style="stop-color:#f64f59;stop-opacity:1;"
+         offset="1"
+         id="stop1633" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient1635"
+       id="linearGradient1629"
+       x1="-11.632822"
+       y1="-14.09163"
+       x2="57.777943"
+       y2="72"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <sodipodi:namedview
+     id="namedview1385"
+     pagecolor="#ffffff"
+     bordercolor="#999999"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="3.4521937"
+     inkscape:cx="34.760506"
+     inkscape:cy="35.919189"
+     inkscape:window-width="1407"
+     inkscape:window-height="965"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg1383" />
+  <rect
+     style="fill:url(#linearGradient1629);fill-opacity:1;stroke-width:2.1"
+     id="rect1620"
+     width="72"
+     height="72"
+     x="0"
+     y="0"
+     ry="14.670292" />
+  <circle
+     style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:3.17998;stroke-dasharray:none;stroke-opacity:1"
+     id="path2747"
+     cx="36"
+     cy="36"
+     r="11.132339" />
+</svg>

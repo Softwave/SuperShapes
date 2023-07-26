@@ -10,7 +10,6 @@ config_version=4
 
 _global_script_classes=[  ]
 _global_script_class_icons={
-
 }
 
 [application]
@@ -23,9 +22,17 @@ boot_splash/bg_color=Color( 0, 0, 0, 1 )
 config/icon="res://superIcon.png"
 config/windows_native_icon="res://bigicon_J6A_icon.ico"
 
+[display]
+
+window/size/height=800
+
 [editor_plugins]
 
 enabled=PoolStringArray( "goutte.camera.trackball" )
+
+[global]
+
+antial=true
 
 [input]
 
@@ -40,6 +47,17 @@ zoom_out={
  ]
 }
 
+[mono]
+
+project/assembly_name="Super Shapes 2"
+
 [rendering]
 
+quality/filters/sharpen_intensity=0.6
+quality/shading/force_vertex_shading.mobile=false
+quality/shading/force_lambert_over_burley.mobile=false
+quality/shading/force_blinn_over_ggx.mobile=false
+quality/subsurface_scattering/quality=2
+quality/filters/msaa=2
+quality/filters/use_fxaa=true
 environment/default_environment="res://default_env.tres"
